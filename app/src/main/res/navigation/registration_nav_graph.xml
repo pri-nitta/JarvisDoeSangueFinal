@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.jarvis.jarvisdoesangue.profile.AddressFragment"
+        android:label="fragment_address"
+        tools:layout="@layout/fragment_address">
+
+        <action
+            android:id="@+id/action_addressFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.jarvis.jarvisdoesangue.profile.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation">
+
+        <action
+            android:id="@+id/action_confirmationFragment_to_personalDataFragment"
+            app:destination="@id/personalDataFragment" />
+        <action
+            android:id="@+id/action_confirmationFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.jarvis.jarvisdoesangue.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_personalDataFragment"
+            app:destination="@id/personalDataFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_informationMenuFragment"
+            app:destination="@id/informationMenuFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_donationHistoryFragment"
+            app:destination="@id/donationHistoryFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_donationRegistrationFragment"
+            app:destination="@id/donationRegistrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="com.jarvis.jarvisdoesangue.profile.PersonalDataFragment"
+        android:label="fragment_personal_data"
+        tools:layout="@layout/fragment_personal_data">
+
+        <action
+            android:id="@+id/action_personalDataFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informationMenuFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.InformationMenuFragment"
+        android:label="fragment_information_menu"
+        tools:layout="@layout/fragment_information_menu" >
+        <action
+            android:id="@+id/action_informationMenuFragment_to_basicRequirementsFragment"
+            app:destination="@id/basicRequirementsFragment" />
+        <action
+            android:id="@+id/action_informationMenuFragment_to_temporaryImpedimentsFragment"
+            app:destination="@id/temporaryImpedimentsFragment" />
+        <action
+            android:id="@+id/action_informationMenuFragment_to_donationPeriodicityFragment"
+            app:destination="@id/donationPeriodicityFragment" />
+        <action
+            android:id="@+id/action_informationMenuFragment_to_definitiveImpedimentsFragment"
+            app:destination="@id/definitiveImpedimentsFragment" />
+        <action
+            android:id="@+id/action_informationMenuFragment_to_afterDonationCareFragment"
+            app:destination="@id/afterDonationCareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basicRequirementsFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.BasicRequirementsFragment"
+        android:label="fragment_basic_requirements"
+        tools:layout="@layout/fragment_basic_requirements" />
+    <fragment
+        android:id="@+id/temporaryImpedimentsFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.TemporaryImpedimentsFragment"
+        android:label="fragment_temporary_impediments"
+        tools:layout="@layout/fragment_temporary_impediments" />
+    <fragment
+        android:id="@+id/definitiveImpedimentsFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.DefinitiveImpedimentsFragment"
+        android:label="fragment_definitive_impediments"
+        tools:layout="@layout/fragment_definitive_impediments" />
+    <fragment
+        android:id="@+id/donationPeriodicityFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.DonationPeriodicityFragment"
+        android:label="fragment_donation_interval"
+        tools:layout="@layout/fragment_donation_interval" />
+    <fragment
+        android:id="@+id/afterDonationCareFragment"
+        android:name="com.jarvis.jarvisdoesangue.donationInfo.AfterDonationCareFragment"
+        android:label="fragment_after_donation_care"
+        tools:layout="@layout/fragment_after_donation_care" />
+    <fragment
+        android:id="@+id/donationHistoryFragment"
+        android:name="com.jarvis.jarvisdoesangue.donation.DonationHistoryFragment"
+        android:label="fragment_donation_history"
+        tools:layout="@layout/fragment_donation_history" />
+    <fragment
+        android:id="@+id/donationRegistrationFragment"
+        android:name="com.jarvis.jarvisdoesangue.donation.DonationRegistrationFragment"
+        android:label="fragment_donation_registration"
+        tools:layout="@layout/fragment_donation_registration" />
+</navigation>

@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".donation.DonationHistoryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:paddingVertical="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dk_longreach"
+                android:gravity="center"
+                android:text="@string/app_title"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/doacao_de_sangue"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="32dp"
+                android:paddingBottom="32dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_save_24"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/purple_200"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:gravity="center"
+                    android:text="@string/donation_history"
+                    android:textAllCaps="true"
+                    android:textColor="@color/purple_200"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:paddingVertical="16dp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/gray"
+                    android:text="@string/back"
+                    android:textAllCaps="false"
+                    android:stateListAnimator="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/first_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title">
+
+                    <TextView
+                        android:id="@+id/date_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/date_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/date_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/date_title"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="10/10/2022" />
+
+                    <TextView
+                        android:id="@+id/place_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/place_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date_title" />
+
+                    <TextView
+                        android:id="@+id/place_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/place_title"
+                        app:layout_constraintTop_toTopOf="@+id/place_title"
+                        tools:text="Hemocentro Paraíso" />
+
+                    <TextView
+                        android:id="@+id/quantity_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/quantity_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_title" />
+
+                    <TextView
+                        android:id="@+id/quantity_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/quantity_title"
+                        app:layout_constraintTop_toTopOf="@+id/quantity_title"
+                        tools:text="450ml" />
+
+                    <TextView
+                        android:id="@+id/feeling_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/feeling_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/quantity_title" />
+
+                    <TextView
+                        android:id="@+id/feeling_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/feeling_title"
+                        app:layout_constraintTop_toTopOf="@+id/feeling_title"
+                        tools:text="Bem" />
+
+                    <TextView
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="@string/line"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/feeling_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/second_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/first_donation">
+
+                    <TextView
+                        android:id="@+id/date_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/date_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/date_data2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/date_title2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="10/10/2022" />
+
+                    <TextView
+                        android:id="@+id/place_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/place_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date_title2" />
+
+                    <TextView
+                        android:id="@+id/place_data2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/place_title2"
+                        app:layout_constraintTop_toTopOf="@+id/place_title2"
+                        tools:text="Hemocentro Paraíso" />
+
+                    <TextView
+                        android:id="@+id/quantity_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/quantity_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_title2" />
+
+                    <TextView
+                        android:id="@+id/quantity_data2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/quantity_title2"
+                        app:layout_constraintTop_toTopOf="@+id/quantity_title2"
+                        tools:text="450ml" />
+
+                    <TextView
+                        android:id="@+id/feeling_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/feeling_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/quantity_title2" />
+
+                    <TextView
+                        android:id="@+id/feeling_data2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/feeling_title2"
+                        app:layout_constraintTop_toTopOf="@+id/feeling_title2"
+                        tools:text="Bem" />
+
+                    <TextView
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="@string/line"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/feeling_title2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/third_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/second_donation">
+
+                    <TextView
+                        android:id="@+id/date_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/date_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/date_data3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/date_title3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="10/10/2022" />
+
+                    <TextView
+                        android:id="@+id/place_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/place_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date_title3" />
+
+                    <TextView
+                        android:id="@+id/place_data3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/place_title3"
+                        app:layout_constraintTop_toTopOf="@+id/place_title3"
+                        tools:text="Hemocentro Paraíso" />
+
+                    <TextView
+                        android:id="@+id/quantity_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/quantity_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_title3" />
+
+                    <TextView
+                        android:id="@+id/quantity_data3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/quantity_title3"
+                        app:layout_constraintTop_toTopOf="@+id/quantity_title3"
+                        tools:text="450ml" />
+
+                    <TextView
+                        android:id="@+id/feeling_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/feeling_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/quantity_title3" />
+
+                    <TextView
+                        android:id="@+id/feeling_data3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/feeling_title3"
+                        app:layout_constraintTop_toTopOf="@+id/feeling_title3"
+                        tools:text="Bem" />
+
+                    <TextView
+                        android:id="@+id/line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="@string/line"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/feeling_title3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fourth_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/third_donation">
+
+                    <TextView
+                        android:id="@+id/date_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/date_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/date_data4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/date_title4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="10/10/2022" />
+
+                    <TextView
+                        android:id="@+id/place_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/place_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date_title4" />
+
+                    <TextView
+                        android:id="@+id/place_data4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/place_title4"
+                        app:layout_constraintTop_toTopOf="@+id/place_title4"
+                        tools:text="Hemocentro Paraíso" />
+
+                    <TextView
+                        android:id="@+id/quantity_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/quantity_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_title4" />
+
+                    <TextView
+                        android:id="@+id/quantity_data4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/quantity_title4"
+                        app:layout_constraintTop_toTopOf="@+id/quantity_title4"
+                        tools:text="450ml" />
+
+                    <TextView
+                        android:id="@+id/feeling_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        android:text="@string/feeling_title"
+                        android:textColor="@color/purple_200"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/quantity_title4" />
+
+                    <TextView
+                        android:id="@+id/feeling_data4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/coolvetica_rg"
+                        app:layout_constraintStart_toEndOf="@+id/feeling_title4"
+                        app:layout_constraintTop_toTopOf="@+id/feeling_title4"
+                        tools:text="Bem" />
+
+                    <TextView
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="@string/line"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/feeling_title4" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
