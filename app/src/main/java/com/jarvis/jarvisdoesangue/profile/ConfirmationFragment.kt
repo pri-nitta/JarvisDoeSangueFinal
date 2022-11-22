@@ -125,11 +125,9 @@ class ConfirmationFragment : Fragment() {
         )
         call.enqueue(object : Callback<Address>{
             override fun onResponse(call: Call<Address>, response: Response<Address>) {
-                Toast.makeText(context,"Cadastro realizado!", Toast.LENGTH_LONG).show()
             }
 
             override fun onFailure(call: Call<Address>, t: Throwable) {
-                Toast.makeText(context,"Cadastro não efetuado", Toast.LENGTH_LONG).show()
             }
         })
     }

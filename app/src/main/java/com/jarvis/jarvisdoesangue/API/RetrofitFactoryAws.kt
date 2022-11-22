@@ -5,10 +5,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitFactoryAws {
-    val URL: String = "https://lmf09uq2aa.execute-api.sa-east-1.amazonaws.com"
+    private val URL: String = "https://7kx27kccw4.execute-api.sa-east-1.amazonaws.com"
     private val client = OkHttpClient.Builder().build()
 
-    val retrofitFactoryAws = Retrofit.Builder()
+    private val retrofitFactoryAws: Retrofit = Retrofit.Builder()
         .baseUrl(URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
