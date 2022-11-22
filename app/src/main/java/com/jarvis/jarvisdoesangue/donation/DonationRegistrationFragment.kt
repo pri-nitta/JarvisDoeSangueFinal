@@ -38,17 +38,17 @@ class DonationRegistrationFragment : Fragment() {
             }
 
             btnRegister.setOnClickListener {
-                postDonation(1)
+                postDonation(1L)
             }
         }
     }
 
-    private fun postDonation(userId: Int){
+    private fun postDonation(userId: Long){
         val response = RetrofitFactoryAws().retrofitServiceAws().postDonation(
             Donation(
                 date = binding.dateField.text.toString(),
                 place = binding.placeField.text.toString(),
-                quantity = (binding.bloodQuantityfield.text.toString()).toDouble(),
+                quantity = binding.bloodQuantityfield.text.toString(),
                 feeling = binding.feelingField.text.toString(),
                 userId = userId
             )

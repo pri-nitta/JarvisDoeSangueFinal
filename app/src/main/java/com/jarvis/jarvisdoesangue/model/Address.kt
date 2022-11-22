@@ -9,5 +9,6 @@ data class Address(
     @SerializedName("complemento") val complemento: String?,
     @SerializedName("bairro") val bairro: String?,
     @SerializedName("cidade") val cidade: String?,
-    @SerializedName("estado") val uf: String?
+    @SerializedName("estado") val uf: String?,
+    @SerializedName("id_usuario") val userId: Long
 )

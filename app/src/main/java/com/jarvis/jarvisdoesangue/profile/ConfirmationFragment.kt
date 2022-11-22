@@ -119,7 +119,8 @@ class ConfirmationFragment : Fragment() {
                 complemento = binding.additionalDataData.text.toString(),
                 bairro = binding.neighbourhoodData.text.toString(),
                 cidade = binding.cityData.text.toString(),
-                uf = binding.stateData.text.toString()
+                uf = binding.stateData.text.toString(),
+                userId = 1
             )
         )
         call.enqueue(object : Callback<Address>{

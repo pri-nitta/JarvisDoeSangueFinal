@@ -6,6 +6,6 @@ data class Donation(
     @SerializedName("sentimento") val feeling: String,
     @SerializedName("data") val date: String,
     @SerializedName("clinica") val place: String,
-    @SerializedName("quantidade_sangue") val quantity: Double,
-    @SerializedName("id_usuario") val userId: Int
+    @SerializedName("quantidade_sangue") val quantity: String,
+    @SerializedName("id_usuario") val userId: Long
 )
