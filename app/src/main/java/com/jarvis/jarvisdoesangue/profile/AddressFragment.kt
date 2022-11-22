@@ -51,8 +51,6 @@ class AddressFragment : Fragment() {
             editor?.putString("cidade", binding.cityField.text.toString())
             editor?.putString("estado", binding.stateField.text.toString())
             editor?.apply()
-
-            Toast.makeText(context, getString(R.string.address_register), Toast.LENGTH_SHORT).show()
         }
         binding.apply {
 
